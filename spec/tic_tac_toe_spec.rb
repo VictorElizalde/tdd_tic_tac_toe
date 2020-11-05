@@ -111,4 +111,18 @@ describe Board do
                      X O O)
     expect(board.game_over?).to eq(true)
   end
+
+  it "tells the winner token X" do
+    board.board = %w(X X X
+                     O X O
+                     O O X)
+    expect(board.winner).to eq ('X')
+  end
+
+  it "tells the winner token X" do
+    board.board = %w(O X X
+                     O X O
+                     O O X)
+    expect(board.winner).to eq ('O')
+  end
 end

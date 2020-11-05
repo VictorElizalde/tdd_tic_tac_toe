@@ -68,4 +68,18 @@ class Board
   def game_over?
     winner? || possible_moves.length.zero?
   end
+
+  def winner
+    rows.each do |row|
+      return row.uniq.first if row.uniq.length == 1
+    end
+
+    columns.each do |column|
+      return column.uniq.first if column.uniq.length == 1
+    end
+
+    diagonals.each do |diagonal|
+      return diagonal.uniq.first if diagonal.uniq.length == 1
+    end
+  end
 end

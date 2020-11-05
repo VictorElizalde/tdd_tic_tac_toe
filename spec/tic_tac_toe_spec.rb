@@ -35,4 +35,8 @@ describe Board do
     board.set_token_at(0, 'X')
     expect(board.possible_moves).to eq(["2", "3", "4", "5", "6", "7", "8", "9"])
   end
+
+  it "checks if a player won with a row combination" do
+    expect(board.row_win?).to eq(false)
+  end
 end

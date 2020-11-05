@@ -35,4 +35,11 @@ class Board
   def possible_moves
     board.reject { |token| token == 'X' || token == 'O' }
   end
+
+  def row_win?
+    rows.each do |row|
+      return true if row.uniq == ['X'] || row.uniq == ['O']
+    end
+    false
+  end
 end

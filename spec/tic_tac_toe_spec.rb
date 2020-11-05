@@ -1,5 +1,6 @@
 require 'board.rb'
 require 'ui.rb'
+require 'player.rb'
 
 describe Board do
   let(:board) { Board.new }
@@ -148,5 +149,17 @@ describe UI do
                      O O X
                      X O O)
     expect { ui.print_winner(board) }.to output("X won\n").to_stdout
+  end
+end
+
+describe Player do
+  let(:player) { Player.new('X') }
+
+  it 'is initialized with a token' do
+    expect(player.token).to eq 'X'
+  end
+
+  it 'is initialized with an enemy token' do
+    expect(player.enemy_token).to eq 'O'
   end
 end

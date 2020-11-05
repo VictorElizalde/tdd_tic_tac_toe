@@ -1,4 +1,5 @@
 require 'board.rb'
+require 'ui.rb'
 
 describe Board do
   let(:board) { Board.new }
@@ -124,5 +125,28 @@ describe Board do
                      O X O
                      O O X)
     expect(board.winner).to eq ('O')
+  end
+end
+
+describe UI do
+  let(:ui) { UI.new }
+  let(:board) { Board.new }
+
+  it 'prints board' do
+    ui.display_board(board)
+  end
+
+  it 'prints tie for tie game' do
+    board.board = %w(X X O
+                     O O X
+                     X O O)
+    expect { ui.print_tie }.to output("Tie\n").to_stdout
+  end
+
+  it 'prints the winner of TTT' do
+    board.board = %w(X X X
+                     O O X
+                     X O O)
+    expect { ui.print_winner(board) }.to output("X won\n").to_stdout
   end
 end

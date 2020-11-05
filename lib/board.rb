@@ -27,4 +27,8 @@ class Board
   def set_token_at(coordinate, token)
     board[coordinate] = token
   end
+
+  def reset_token_at(coordinate)
+    board[coordinate] = (coordinate + 1).to_s
+  end
 end

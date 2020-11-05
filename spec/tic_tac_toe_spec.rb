@@ -26,4 +26,8 @@ describe Board do
   it "sets token at a coordinate" do
     expect(board.set_token_at(0, 'X')).to eq("X")
   end
+
+  it "resets token at a coordinate" do
+    expect(board.reset_token_at(0)).to eq("1")
+  end
 end

@@ -39,4 +39,11 @@ describe Board do
   it "checks if a player won with a row combination" do
     expect(board.row_win?).to eq(false)
   end
+
+  it "returns true because of row combination" do
+    board.set_token_at(0, 'X')
+    board.set_token_at(1, 'X')
+    board.set_token_at(2, 'X')
+    expect(board.row_win?).to eq(true)
+  end
 end

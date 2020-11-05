@@ -1,6 +1,7 @@
 require 'board.rb'
 require 'ui.rb'
 require 'player.rb'
+require 'human.rb'
 
 describe Board do
   let(:board) { Board.new }
@@ -161,5 +162,23 @@ describe Player do
 
   it 'is initialized with an enemy token' do
     expect(player.enemy_token).to eq 'O'
+  end
+end
+
+describe Human do
+  let(:board) { Board.new }
+  let(:human) { Human.new('X') }
+
+  it 'is initialized with a token' do
+    expect(human.token).to eq 'X'
+  end
+
+  it 'has an enemy' do
+    expect(human.enemy_token).to eq 'O'
+  end
+
+  it 'makes a move in a location' do
+    human.move(board, 0)
+    expect(board.get_token_at(0)).to eq 'X'
   end
 end

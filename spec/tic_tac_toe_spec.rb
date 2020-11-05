@@ -22,4 +22,8 @@ describe Board do
   it "gets token at a coordinate" do
     expect(board.get_token_at(0)).to eq('1')
   end
+
+  it "sets token at a coordinate" do
+    expect(board.set_token_at(0, 'X')).to eq("X")
+  end
 end

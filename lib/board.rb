@@ -23,4 +23,8 @@ class Board
   def get_token_at(coordinate)
     board[coordinate]
   end
+
+  def set_token_at(coordinate, token)
+    board[coordinate] = token
+  end
 end

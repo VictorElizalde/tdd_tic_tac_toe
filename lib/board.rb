@@ -64,4 +64,8 @@ class Board
   def tie?
     possible_moves.length.zero? && !winner?
   end
+
+  def game_over?
+    winner? || possible_moves.length.zero?
+  end
 end

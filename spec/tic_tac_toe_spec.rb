@@ -100,4 +100,15 @@ describe Board do
                      O O X)
     expect(board.tie?).to eq(true)
   end
+
+  it "checks if the game is over" do
+    expect(board.game_over?).to eq(false)
+  end
+
+  it "returns true when game is over" do
+    board.board = %w(X X O
+                     O X X
+                     X O O)
+    expect(board.game_over?).to eq(true)
+  end
 end

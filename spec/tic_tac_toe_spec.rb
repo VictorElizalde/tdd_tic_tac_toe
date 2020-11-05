@@ -14,4 +14,8 @@ describe Board do
   it "gets the columns" do
     expect(board.columns).to eq([["0", "3", "6"], ["1", "4", "7"], ["2", "5", "8"]])
   end
+
+  it "gets the diagonals" do
+    expect(board.diagonals).to eq([["0", "4", "8"], ["2", "4", "6"]])
+  end
 end

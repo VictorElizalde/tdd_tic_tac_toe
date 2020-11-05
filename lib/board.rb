@@ -12,4 +12,11 @@ class Board
   def columns
     rows.transpose
   end
+
+  def diagonals
+    left_diagonal = ['0', '4', '8']
+    right_diagonal = ['2', '4', '6']
+
+    [left_diagonal, right_diagonal]
+  end
 end

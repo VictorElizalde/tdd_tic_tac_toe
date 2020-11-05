@@ -60,4 +60,8 @@ class Board
   def winner?
     row_win? || column_win? || diagonal_win?
   end
+
+  def tie?
+    possible_moves.length.zero? && !winner?
+  end
 end

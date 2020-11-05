@@ -93,4 +93,11 @@ describe Board do
     board.set_token_at(8, 'X')
     expect(board.winner?).to eq(true)
   end
+
+  it "returns true if no winner exists and board is complete" do
+    board.board = %w(O X X
+                     X X O
+                     O O X)
+    expect(board.tie?).to eq(true)
+  end
 end

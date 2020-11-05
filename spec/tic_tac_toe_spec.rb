@@ -30,4 +30,9 @@ describe Board do
   it "resets token at a coordinate" do
     expect(board.reset_token_at(0)).to eq("1")
   end
+
+  it "returns possible moves in board" do
+    board.set_token_at(0, 'X')
+    expect(board.possible_moves).to eq(["2", "3", "4", "5", "6", "7", "8", "9"])
+  end
 end

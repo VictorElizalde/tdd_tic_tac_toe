@@ -31,4 +31,8 @@ class Board
   def reset_token_at(coordinate)
     board[coordinate] = (coordinate + 1).to_s
   end
+
+  def possible_moves
+    board.reject { |token| token == 'X' || token == 'O' }
+  end
 end

@@ -3,11 +3,11 @@ class UI
     playing_board = ''
     playing_board << " #{board.board[0]} | #{board.board[1]} | #{board.board[2]} "
     playing_board << "\n-----------\n"
-    playing_board << " #{board.board[3]} | #{board.board[4]} | #{board.board[5]} "
+    playing_board << " #{board.board[3]} | #{board.board[4]} | #{board.board[5]}"
     playing_board << "\n-----------\n"
-    playing_board << " #{board.board[6]} | #{board.board[7]} | #{board.board[8]} "
-    playing_board
+    playing_board << " #{board.board[6]} | #{board.board[7]} | #{board.board[8]}"
     puts playing_board
+    playing_board
   end
 
   def print_winner(board)

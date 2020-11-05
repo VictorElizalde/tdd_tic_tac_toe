@@ -134,7 +134,7 @@ describe UI do
   let(:board) { Board.new }
 
   it 'prints board' do
-    ui.display_board(board)
+    expect { ui.display_board(board) }.to output(" 1 | 2 | 3 \n-----------\n 4 | 5 | 6\n-----------\n 7 | 8 | 9\n").to_stdout
   end
 
   it 'prints tie for tie game' do

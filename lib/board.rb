@@ -56,4 +56,8 @@ class Board
     end
     false
   end
+
+  def winner?
+    row_win? || column_win? || diagonal_win?
+  end
 end

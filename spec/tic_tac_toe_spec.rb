@@ -68,4 +68,29 @@ describe Board do
     board.set_token_at(8, 'X')
     expect(board.diagonal_win?).to eq(true)
   end
+
+  it "returns true if a winner exists in any combination" do
+    expect(board.winner?).to eq(false)
+  end
+
+  it "returns true if a winner exists in row" do
+    board.set_token_at(0, 'X')
+    board.set_token_at(1, 'X')
+    board.set_token_at(2, 'X')
+    expect(board.winner?).to eq(true)
+  end
+
+  it "returns true if a winner exists in column" do
+    board.set_token_at(0, 'X')
+    board.set_token_at(3, 'X')
+    board.set_token_at(6, 'X')
+    expect(board.winner?).to eq(true)
+  end
+
+  it "returns true if a winner exists in diagonal" do
+    board.set_token_at(0, 'X')
+    board.set_token_at(4, 'X')
+    board.set_token_at(8, 'X')
+    expect(board.winner?).to eq(true)
+  end
 end

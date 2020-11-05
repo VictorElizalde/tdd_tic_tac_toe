@@ -119,14 +119,14 @@ describe Board do
     board.board = %w(X X X
                      O X O
                      O O X)
-    expect(board.winner).to eq ('X')
+    expect(board.winner).to eq('X')
   end
 
   it "tells the winner token X" do
     board.board = %w(O X X
                      O X O
                      O O X)
-    expect(board.winner).to eq ('O')
+    expect(board.winner).to eq('O')
   end
 end
 
@@ -157,11 +157,11 @@ describe Player do
   let(:player) { Player.new('X') }
 
   it 'is initialized with a token' do
-    expect(player.token).to eq 'X'
+    expect(player.token).to eq('X')
   end
 
   it 'is initialized with an enemy token' do
-    expect(player.enemy_token).to eq 'O'
+    expect(player.enemy_token).to eq('O')
   end
 end
 
@@ -170,15 +170,15 @@ describe Human do
   let(:human) { Human.new('X') }
 
   it 'is initialized with a token' do
-    expect(human.token).to eq 'X'
+    expect(human.token).to eq('X')
   end
 
   it 'has an enemy' do
-    expect(human.enemy_token).to eq 'O'
+    expect(human.enemy_token).to eq('O')
   end
 
   it 'makes a move in a location' do
     human.move(board, 0)
-    expect(board.get_token_at(0)).to eq 'X'
+    expect(board.get_token_at(0)).to eq('X')
   end
 end

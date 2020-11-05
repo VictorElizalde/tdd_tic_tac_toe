@@ -46,4 +46,15 @@ describe Board do
     board.set_token_at(2, 'X')
     expect(board.row_win?).to eq(true)
   end
+
+  it "checks if a player won with a column combination" do
+    expect(board.column_win?).to eq(false)
+  end
+
+  it "returns true because of column combination" do
+    board.set_token_at(0, 'X')
+    board.set_token_at(3, 'X')
+    board.set_token_at(6, 'X')
+    expect(board.column_win?).to eq(true)
+  end
 end

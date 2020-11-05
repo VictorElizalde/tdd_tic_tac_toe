@@ -42,4 +42,11 @@ class Board
     end
     false
   end
+
+  def column_win?
+    columns.each do |column|
+      return true if column.uniq == ['X'] || column.uniq == ['O']
+    end
+    false
+  end
 end

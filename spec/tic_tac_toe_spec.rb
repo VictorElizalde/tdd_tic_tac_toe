@@ -57,4 +57,15 @@ describe Board do
     board.set_token_at(6, 'X')
     expect(board.column_win?).to eq(true)
   end
+
+  it "checks if a player won with a diagonal combination" do
+    expect(board.diagonal_win?).to eq(false)
+  end
+
+  it "returns true because of diagonal combination" do
+    board.set_token_at(0, 'X')
+    board.set_token_at(4, 'X')
+    board.set_token_at(8, 'X')
+    expect(board.diagonal_win?).to eq(true)
+  end
 end

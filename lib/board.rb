@@ -14,8 +14,8 @@ class Board
   end
 
   def diagonals
-    left_diagonal = ['1', '5', '9']
-    right_diagonal = ['3', '5', '7']
+    left_diagonal = [board[0], board[4], board[8]]
+    right_diagonal = [board[2], board[4], board[6]]
 
     [left_diagonal, right_diagonal]
   end
@@ -46,6 +46,13 @@ class Board
   def column_win?
     columns.each do |column|
       return true if column.uniq == ['X'] || column.uniq == ['O']
+    end
+    false
+  end
+
+  def diagonal_win?
+    diagonals.each do |diagonal|
+      return true if diagonal.uniq == ['X'] || diagonal.uniq == ['O']
     end
     false
   end
